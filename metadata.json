@@ -1,0 +1,6 @@
+{
+  "name": "ANN Crop Rotation Optimizer",
+  "description": "An Artificial Neural Network approach for optimizing crop rotation and agricultural productivity using soil nutrient and environmental parameters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
