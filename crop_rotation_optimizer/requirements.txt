@@ -1,0 +1,19 @@
+# Python Dependencies for Minor Project-I
+# An Artificial Neural Network Approach for Optimizing Crop Rotation and Agricultural Productivity
+
+# Core Scientific Computing
+numpy>=1.24.3
+pandas>=2.0.3
+scikit-learn>=1.3.0
+
+# Neural Network & Deep Learning (Optional, native MLP engine provided in src/ann_model.py)
+tensorflow>=2.14.0; sys_platform != 'darwin' or platform_machine != 'arm64'
+
+# Web Application & Visualization
+streamlit>=1.32.0
+plotly>=5.18.0
+matplotlib>=3.7.2
+
+# Testing & Artifact Storage
+pytest>=7.4.0
+joblib>=1.3.2
