@@ -80,7 +80,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               className="inline-flex items-center gap-2 bg-emerald-950/60 hover:bg-emerald-900 text-emerald-200 font-medium px-4 py-2.5 rounded-xl border border-emerald-800 transition-all text-sm"
             >
               <BarChart3 className="w-4 h-4" />
-              View ANN Evaluation (98.18%)
+              View ANN Evaluation ({testAccuracy.toFixed(2)}%)
             </button>
             {onDownloadZip ? (
               <button
@@ -153,7 +153,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="text-2xl font-bold text-slate-900">
             {recentPredictions.length + recentRotations.length} Plans
           </div>
-          <p className="text-xs text-slate-500 mt-1">Stored in local SQLite database</p>
+          <p className="text-xs text-slate-500 mt-1">Stored in local history file</p>
         </div>
       </div>
 
