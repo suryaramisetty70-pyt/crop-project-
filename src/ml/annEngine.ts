@@ -633,7 +633,9 @@ export class NeuralNetwork {
     });
 
     scored.sort((a, b) => b.probability - a.probability);
-    const topCandidates = scored.slice(0, 5);
+    const previous = input.previousCrop?.trim().toLowerCase();
+    const topCandidates = scored.filter(candidate => candidate.crop.toLowerCase() !== previous).slice(0, 5);
+    if (!topCandidates.length) throw new Error('No eligible crop candidates found.');
 
     return {
       input: {
