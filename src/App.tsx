@@ -307,6 +307,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         isModelTrained={neuralNet.isTrained}
+        testAccuracy={currentArtifact?.evaluation?.testAccuracy}
         totalRecords={dataset.length}
         onDownloadZip={handleDownloadZip}
         isDownloadingZip={isDownloadingZip}
@@ -319,7 +320,7 @@ export default function App() {
             recentPredictions={predictions}
             recentRotations={rotations}
             totalRecords={dataset.length}
-            testAccuracy={currentArtifact?.evaluation?.testAccuracy || 98.18}
+            testAccuracy={currentArtifact?.evaluation?.testAccuracy ?? 0}
             onDownloadZip={handleDownloadZip}
             isDownloadingZip={isDownloadingZip}
           />
@@ -386,7 +387,7 @@ export default function App() {
             <span>• CSE Minor Project-I</span>
           </div>
           <div className="text-center sm:text-right text-slate-400">
-            Authentic Data: ICAR/FAO Protocols • Local SQLite Persistence • Zero Paid Dependencies
+            Crop suitability dataset • Local JSON history • Zero Paid Dependencies
           </div>
         </div>
       </footer>
