@@ -53,9 +53,9 @@ export const AboutProject: React.FC = () => {
           </h3>
           <ul className="text-xs text-slate-600 space-y-2 list-disc list-inside leading-relaxed">
             <li><strong>Zero Cost Implementation:</strong> Runs entirely on standard laptop hardware with zero paid APIs or cloud dependencies.</li>
-            <li><strong>Authentic Machine Learning:</strong> Genuine 3-layer neural network with He-Normal weight initialization, Adam optimizer, and stratified 15% held-out test evaluation (98.18% accuracy).</li>
+            <li><strong>Authentic Machine Learning:</strong> Genuine 3-layer neural network with He-Normal weight initialization, Adam optimizer, and stratified 15% held-out test evaluation.</li>
             <li><strong>Agronomic Constraint Integration:</strong> Transparent multi-season sequence scoring penalizing monoculture, rewarding Rhizobium pulse nitrogen restoration, and validating seasonal calendars.</li>
-            <li><strong>Local Persistence:</strong> Parameterized SQLite storage for full prediction audit trails and CSV exportability.</li>
+            <li><strong>Local Persistence:</strong> JSON file storage for full prediction audit trails and CSV exportability.</li>
           </ul>
         </div>
       </div>
