@@ -68,7 +68,7 @@ export const PredictionHistory: React.FC<PredictionHistoryProps> = ({
   };
 
   const handleClear = async () => {
-    if (!confirm('Are you sure you want to clear all history records from the local SQLite database?')) {
+    if (!confirm('Are you sure you want to clear all history records from the local history file?')) {
       return;
     }
     setIsDeleting(true);
@@ -100,10 +100,10 @@ export const PredictionHistory: React.FC<PredictionHistoryProps> = ({
         <div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 flex items-center gap-2">
             <History className="w-8 h-8 text-emerald-600" />
-            Prediction Audit Trail & SQLite History
+            Prediction Audit Trail & JSON history History
           </h2>
           <p className="text-sm text-slate-600 mt-1">
-            Audit log of all single-season suitability inferences and multi-season rotation plans stored locally in SQLite.
+            Audit log of all single-season suitability inferences and multi-season rotation plans stored locally in JSON history.
           </p>
         </div>
 
@@ -229,7 +229,7 @@ export const PredictionHistory: React.FC<PredictionHistoryProps> = ({
             </div>
           ) : (
             <div className="py-12 text-center text-slate-500 text-xs">
-              No saved single-crop predictions found in SQLite.
+              No saved single-crop predictions found in JSON history.
             </div>
           )
         ) : (
@@ -282,7 +282,7 @@ export const PredictionHistory: React.FC<PredictionHistoryProps> = ({
             </div>
           ) : (
             <div className="py-12 text-center text-slate-500 text-xs">
-              No saved crop rotation plans found in SQLite.
+              No saved crop rotation plans found in JSON history.
             </div>
           )
         )}
