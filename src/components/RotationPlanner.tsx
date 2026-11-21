@@ -86,7 +86,7 @@ export const RotationPlanner: React.FC<RotationPlannerProps> = ({
       await onSaveRotationPlan(activePlan);
       setSaveSuccess(true);
     } catch (err: any) {
-      alert('Failed to save rotation plan to SQLite: ' + err.message);
+      alert('Failed to save rotation plan to JSON history: ' + err.message);
     } finally {
       setIsSaving(false);
     }
@@ -242,7 +242,7 @@ export const RotationPlanner: React.FC<RotationPlannerProps> = ({
                   }`}
                 >
                   <BookmarkCheck className="w-4 h-4 text-teal-600" />
-                  {saveSuccess ? 'Saved to SQLite' : isSaving ? 'Saving...' : 'Save Plan to SQLite'}
+                  {saveSuccess ? 'Saved to JSON history' : isSaving ? 'Saving...' : 'Save Plan to JSON history'}
                 </button>
 
                 <button
