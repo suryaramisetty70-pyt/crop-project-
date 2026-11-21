@@ -117,7 +117,7 @@ export const CropRecommendation: React.FC<CropRecommendationProps> = ({
       await onSavePrediction(predictionResult);
       setSaveSuccess(true);
     } catch (err: any) {
-      alert('Failed to save record to SQLite: ' + err.message);
+      alert('Failed to save record to JSON history: ' + err.message);
     } finally {
       setIsSaving(false);
     }
@@ -147,7 +147,7 @@ export const CropRecommendation: React.FC<CropRecommendationProps> = ({
             type="button"
             onClick={() => applyPreset({
               name: 'Indo-Gangetic Wet Plain',
-              N: 90, P: 42, K: 43, temp: 21, hum: 82, ph: 6.5, rain: 210, prev: 'wheat'
+              N: 90, P: 42, K: 43, temp: 21, hum: 82, ph: 6.5, rain: 210, prev: 'None'
             })}
             className="px-3 py-1.5 rounded-lg bg-white hover:bg-emerald-100 text-emerald-900 font-medium border border-emerald-300 shadow-sm transition-all"
           >
@@ -177,7 +177,7 @@ export const CropRecommendation: React.FC<CropRecommendationProps> = ({
             type="button"
             onClick={() => applyPreset({
               name: 'Summer Zaid Riverbed (Melons)',
-              N: 100, P: 20, K: 50, temp: 26, hum: 85, ph: 6.5, rain: 50, prev: 'mustard'
+              N: 100, P: 20, K: 50, temp: 26, hum: 85, ph: 6.5, rain: 50, prev: 'None'
             })}
             className="px-3 py-1.5 rounded-lg bg-white hover:bg-emerald-100 text-emerald-900 font-medium border border-emerald-300 shadow-sm transition-all"
           >
@@ -323,7 +323,7 @@ export const CropRecommendation: React.FC<CropRecommendationProps> = ({
                   onChange={(e) => setRainfall(Number(e.target.value))}
                   min={0}
                   max={600}
-                  step={1}
+                  step={0.1}
                   required
                   className="w-full px-3 py-2 rounded-lg border border-slate-300 text-slate-900 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 />
@@ -426,12 +426,12 @@ export const CropRecommendation: React.FC<CropRecommendationProps> = ({
                         {saveSuccess ? (
                           <>
                             <CheckCircle2 className="w-4 h-4 text-emerald-900" />
-                            Saved to SQLite Database
+                            Saved to history
                           </>
                         ) : (
                           <>
                             <BookmarkCheck className="w-4 h-4 text-emerald-600" />
-                            {isSaving ? 'Saving...' : 'Save Prediction to SQLite'}
+                            {isSaving ? 'Saving...' : 'Save Prediction to JSON history'}
                           </>
                         )}
                       </button>
