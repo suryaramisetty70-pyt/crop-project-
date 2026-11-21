@@ -450,7 +450,7 @@ export const ModelTraining: React.FC<ModelTrainingProps> = ({
               Academic Machine Learning Interpretation
             </span>
             <p className="leading-relaxed">
-              The high evaluation accuracy (98.18%) validates that the Artificial Neural Network has successfully captured non-linear multidimensional decision boundaries for crop suitability. 
+              The high evaluation accuracy ({evaluation.testAccuracy}%) validates that the Artificial Neural Network has successfully captured non-linear multidimensional decision boundaries for crop suitability. 
               However, laboratory test accuracy does not equate to future crop yield guarantees because environmental hazards (pest migrations, irregular monsoons, and soil compaction) operate outside static N-P-K boundaries.
             </p>
           </div>
