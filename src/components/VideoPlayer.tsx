@@ -36,7 +36,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
     { title: 'Problem Statement', time: 6, desc: 'Continuous mono-cropping causes topsoil N depletion, Fusarium fungal buildup, and yield decay.' },
     { title: 'ANN Architecture', time: 12, desc: '3-layer MLP: 7 inputs -> 64 ReLU -> 32 ReLU -> 22 Softmax with Adam & He-Normal weights.' },
     { title: 'Authentic Dataset', time: 18, desc: '2,200 real ICAR/FAO experimental records across 22 crops. Zero fake or simulated data.' },
-    { title: 'Measured Evaluation', time: 24, desc: '98.18% Test Accuracy & 98.18% Macro F1 on 330 unseen held-out test samples.' },
+    { title: 'Measured Evaluation', time: 24, desc: 'Test accuracy and macro F1 on held-out test samples.' },
     { title: 'Crop Recommendation', time: 30, desc: 'Real-time soil input: N=90, P=42, K=43 -> Rice (82.4% confidence) & parameter radar fit.' },
     { title: 'Rotation Optimizer', time: 36, desc: '4-Season sequence: Rice -> Chickpea (+42kg N) -> Watermelon -> Maize (captures fixed N).' },
     { title: 'Reproducibility & Code', time: 44, desc: 'React 19 web app + Python Streamlit package with 9 of 9 automated unit tests passing.' },
@@ -93,7 +93,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
           </h2>
           <p className="text-sm text-slate-600 mt-1">
             Complete high-definition video walkthrough illustrating the ANN architecture, authentic dataset, 
-            98.18% test accuracy, live recommendation workflow, and multi-season rotation planner.
+            model evaluation, live recommendation workflow, and multi-season rotation planner.
           </p>
         </div>
 
