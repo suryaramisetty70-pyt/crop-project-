@@ -15,6 +15,7 @@ interface NavbarProps {
   activeTab: ActiveTab;
   setActiveTab: (tab: ActiveTab) => void;
   isModelTrained: boolean;
+  testAccuracy?: number;
   totalRecords: number;
   onDownloadZip?: () => void;
   isDownloadingZip?: boolean;
@@ -24,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   setActiveTab,
   isModelTrained,
+  testAccuracy,
   totalRecords,
   onDownloadZip,
   isDownloadingZip,
@@ -34,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'rotation', label: 'Rotation Planner', icon: <RefreshCw className="w-4 h-4" /> },
     { id: 'training', label: 'ANN Model & Metrics', icon: <BarChart3 className="w-4 h-4" /> },
     { id: 'dataset', label: 'Dataset Management', icon: <Database className="w-4 h-4" /> },
-    { id: 'history', label: 'History (SQLite)', icon: <History className="w-4 h-4" /> },
+    { id: 'history', label: 'History (JSON history)', icon: <History className="w-4 h-4" /> },
     { id: 'video', label: 'Demo Video (MP4)', icon: <Film className="w-4 h-4" /> },
     { id: 'about', label: 'Project Report', icon: <BookOpen className="w-4 h-4" /> },
   ];
@@ -65,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden lg:flex items-center gap-3 bg-emerald-900/70 border border-emerald-700/60 rounded-full px-3 py-1 text-xs">
             <span className="flex items-center gap-1.5 text-emerald-200 font-medium">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              ANN Trained (98.18% Test Acc)
+              {isModelTrained ? (testAccuracy === undefined ? 'ANN Trained' : `ANN Trained (${testAccuracy.toFixed(2)}% Test Acc)`) : 'ANN Not Trained'}
             </span>
             <span className="text-emerald-500">•</span>
             <span className="text-emerald-300">
