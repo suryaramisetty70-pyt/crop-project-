@@ -33,11 +33,7 @@ function readDb(): DbSchema {
 }
 
 function writeDb(data: DbSchema) {
-  try {
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
-  } catch (err) {
-    console.error('Failed to write history DB:', err);
-  }
+  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
 }
 
 // API Routes
